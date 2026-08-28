@@ -85,12 +85,6 @@ See [AutoTuneTD-SBP/README.md](AutoTuneTD-SBP/README.md) and [Data-Preprocessing
 
 All 27 configurations evaluated in the paper are listed in [params.conf](TopDown-SBP/configs/params.conf). The first row is the reference configuration; every other row changes one setting. Dataset-specific experiments may use only a subset of these configurations.
 
-## Tests
-
-```bash
-python -m unittest discover -s tests -v
-```
-
 ## Citation
 
 ```bibtex
