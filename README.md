@@ -51,6 +51,8 @@ For CUDA 13, replace the CUDA 12 RAPIDS packages in `requirements.txt` with thei
 
 ## Build Top-down SBP
 
+The original Top-down SBP code is available at [vtsynergy/SBP](https://github.com/vtsynergy/SBP).
+
 ```bash
 cmake -S TopDown-SBP -B TopDown-SBP/build -DCMAKE_BUILD_TYPE=Release
 cmake --build TopDown-SBP/build --target TopDownSBP -j
