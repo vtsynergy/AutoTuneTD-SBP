@@ -74,43 +74,16 @@ Recommend configurations for a new graph:
 python AutoTuneTD-SBP/recommend.py \
   --model models/xgboost/model.joblib \
   --graph-features path/to/new_graph_features.csv \
-  --configurations TopDown-SBP/configs/paper_parameter_configurations.conf \
+  --configurations TopDown-SBP/configs/params.conf \
   --alpha 0.5 \
   --output recommendations.csv
 ```
 
 See [AutoTuneTD-SBP/README.md](AutoTuneTD-SBP/README.md) and [Data-Preprocessing/README.md](Data-Preprocessing/README.md) for input-column and preprocessing details.
 
-## Results
+## Parameter configurations
 
-The tables show the best observed `Param*` configuration among the checked-in candidates. For tied scores, the lowest numbered configuration is shown.
-
-### CAIDA
-
-| Graph name | Best configuration (`alpha = 0`) | Best configuration (`alpha = 0.5`) | Best configuration (`alpha = 1`) |
-| --- | ---: | ---: | ---: |
-| `20220114-000000` | Param98 | Param87 | Param86 |
-
-Full CAIDA results and settings are in [Results/CAIDA](Results/CAIDA).
-
-### MIT Graph Challenge (MGC)
-
-| Graph name | Best configuration (`alpha = 0`) | Best configuration (`alpha = 0.5`) | Best configuration (`alpha = 1`) |
-| --- | ---: | ---: | ---: |
-| `static_highOverlap_highBlockSizeVar_1000000_nodes` | Param4 | Param103 | Param31 |
-| `static_highOverlap_highBlockSizeVar_5000000_nodes` | Param4 | Param18 | Param57 |
-| `static_highOverlap_highBlockSizeVar_20000000_nodes` | Param5 | Param5 | Param1 |
-| `static_highOverlap_lowBlockSizeVar_1000000_nodes` | Param72 | Param74 | Param241 |
-| `static_highOverlap_lowBlockSizeVar_5000000_nodes` | Param26 | Param19 | Param19 |
-| `static_highOverlap_lowBlockSizeVar_20000000_nodes` | Param4 | Param4 | Param2 |
-| `static_lowOverlap_highBlockSizeVar_1000000_nodes` | Param4 | Param26 | Param9 |
-| `static_lowOverlap_highBlockSizeVar_5000000_nodes` | Param4 | Param4 | Param9 |
-| `static_lowOverlap_highBlockSizeVar_20000000_nodes` | Param5 | Param2 | Param1 |
-| `static_lowOverlap_lowBlockSizeVar_1000000_nodes` | Param4 | Param26 | Param181 |
-| `static_lowOverlap_lowBlockSizeVar_5000000_nodes` | Param26 | Param26 | Param22 |
-| `static_lowOverlap_lowBlockSizeVar_20000000_nodes` | Param5 | Param1 | Param1 |
-
-Full MGC scores and settings are in [Results/MGC](Results/MGC).
+All 27 configurations evaluated in the paper are listed in [params.conf](TopDown-SBP/configs/params.conf). The first row is the reference configuration; every other row changes one setting. Dataset-specific experiments may use only a subset of these configurations.
 
 ## Tests
 
