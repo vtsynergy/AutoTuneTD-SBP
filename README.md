@@ -1,12 +1,12 @@
 # AutoTuneTD-SBP
 
-AutoTuneTD-SBP recommends a Top-down stochastic block partitioning (SBP) configuration for a graph. The tradeoff parameter `alpha` controls the objective: `0` prioritizes performance, `0.5` balances performance and accuracy, and `1` prioritizes accuracy.
+AutoTuneTD-SBP recommends a high-utility parameter configuration (w.r.t accuracy and computational performance) for the top-down stochastic block partitioning (top-down SBP) graph clustering algorithm for an input graph.
 
-Artifact for **ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning**, accepted at *IEEE HPEC 2026*.
+Details can be found in the artifact, **ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning**, accepted at *IEEE HPEC 2026*.
 
-## Results
+## Prominent Example for Reuse and Broader Impact
 
-The recommended configurations change as `alpha` moves from performance (`0`) to a balance of performance and accuracy (`0.5`) and then accuracy (`1`). The CAIDA and MIT Graph Challenge examples each show three distinct predicted configurations. Each non-reference configuration differs from Configuration 1 in exactly one parameter.
+The recommended parameter configurations change as `alpha` moves from performance (`0`) to a balance of performance and accuracy (`0.5`) and then accuracy (`1`). The CAIDA and MIT Graph Challenge examples each show three distinct predicted configurations. Each non-reference configuration differs from Configuration 1 in exactly one parameter.
 
 The complete definitions of all 27 configurations can be found in [params.conf](TopDown-SBP/configs/params.conf).
 
