@@ -2,7 +2,7 @@
 
 AutoTuneTD-SBP recommends a Top-down stochastic block partitioning (SBP) configuration for a graph. The tradeoff parameter `alpha` controls the objective: `0` prioritizes performance, `0.5` balances performance and accuracy, and `1` prioritizes accuracy.
 
-Artifact for **ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning**, accepted at IEEE HPEC 2026.
+Artifact for **ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning**, accepted at *IEEE HPEC 2026*.
 ## Requirements
 
 - Python 3.11 or newer
@@ -79,6 +79,17 @@ python AutoTuneTD-SBP/recommend.py \
 ```
 
 See [AutoTuneTD-SBP/README.md](AutoTuneTD-SBP/README.md) and [Data-Preprocessing/README.md](Data-Preprocessing/README.md) for input-column and preprocessing details.
+
+## Results
+
+The recommended configurations change as `alpha` moves from performance (`0`) to a balance of performance and accuracy (`0.5`) and then accuracy (`1`).
+
+| Dataset and graph | `alpha = 0` | `alpha = 0.5` | `alpha = 1` |
+| --- | --- | --- | --- |
+| CAIDA: `20220114-000000` | `SUBGRAPHS=2, BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=on, SPLITINIT=random, SPLIT=single-snowball, MH_PERCENT=0.1, ALGORITHM=hybrid_mcmc, OVERLAP=unk, NONPARAMETRIC=0, NODELTA=0, MIX=0, GREEDY=0, APPROXIMATE=0, ASYNC_ITERS=0` | `SUBGRAPHS=2, BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=on, SPLITINIT=random, SPLIT=single-snowball, MH_PERCENT=1.0, ALGORITHM=hybrid_mcmc, OVERLAP=unk, NONPARAMETRIC=1, NODELTA=0, MIX=0, GREEDY=0, APPROXIMATE=0, ASYNC_ITERS=0` | `SUBGRAPHS=2, BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=on, SPLITINIT=random, SPLIT=single-snowball, MH_PERCENT=0.9, ALGORITHM=hybrid_mcmc, OVERLAP=unk, NONPARAMETRIC=1, NODELTA=0, MIX=0, GREEDY=0, APPROXIMATE=0, ASYNC_ITERS=0` |
+| MGC: `static_highOverlap_highBlockSizeVar_5000000_nodes` | `SUBGRAPHS=2, BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=on, SPLITINIT=random, SPLIT=random, MH_PERCENT=0.1, ALGORITHM=hybrid_mcmc, OVERLAP=unk, NONPARAMETRIC=1, NODELTA=0, MIX=0, GREEDY=0, APPROXIMATE=0, ASYNC_ITERS=0` | `SUBGRAPHS=2, BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=on, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=0.1, ALGORITHM=hybrid_mcmc, OVERLAP=unk, NONPARAMETRIC=1, NODELTA=0, MIX=0, GREEDY=1, APPROXIMATE=0, ASYNC_ITERS=0` | `SUBGRAPHS=2, BATCHES=3, CACHE_SIZE=20000, DEGREEPRODUCTSORT=on, SPLITINIT=degree-weighted, SPLIT=connectivity-snowball, MH_PERCENT=0.1, ALGORITHM=hybrid_mcmc, OVERLAP=unk, NONPARAMETRIC=1, NODELTA=0, MIX=0, GREEDY=0, APPROXIMATE=0, ASYNC_ITERS=0` |
+
+See the [CAIDA results](Results/CAIDA/README.md) and [MGC results](Results/MGC/README.md). The same settings are available in the [CAIDA configuration table](Results/CAIDA/caida_best_observed_by_alpha.csv) and [MGC configuration table](Results/MGC/mgc_recommended_configurations.csv).
 
 ## Parameter configurations
 
