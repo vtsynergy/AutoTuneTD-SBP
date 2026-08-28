@@ -1,9 +1,8 @@
 # AutoTuneTD-SBP
 
-Artifact for **ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning**, accepted at IEEE HPEC 2026.
-
 AutoTuneTD-SBP recommends a Top-down stochastic block partitioning (SBP) configuration for a graph. The tradeoff parameter `alpha` controls the objective: `0` prioritizes performance, `0.5` balances performance and accuracy, and `1` prioritizes accuracy.
 
+Artifact for **ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning**, accepted at IEEE HPEC 2026.
 ## Requirements
 
 - Python 3.11 or newer
