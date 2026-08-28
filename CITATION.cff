@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Please cite the IEEE HPEC 2026 paper."
+title: "AutoTuneTD-SBP"
+type: software
+authors:
+  - family-names: Dey
+    given-names: Saikat
+  - family-names: Feng
+    given-names: Wu-chun
+version: 0.1.0
+date-released: 2026-08-25
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Dey
+      given-names: Saikat
+    - family-names: Feng
+      given-names: Wu-chun
+  title: "ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning"
+  conference:
+    name: "2026 IEEE High Performance Extreme Computing Conference (HPEC)"
+  year: 2026
+  status: in-press
