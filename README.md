@@ -4,9 +4,9 @@ AutoTuneTD-SBP recommends a Top-down stochastic block partitioning (SBP) configu
 
 Artifact for **ML-Guided Parameter Configuration Selection for Top-Down Stochastic Block Partitioning**, accepted at *IEEE HPEC 2026*.
 
-## Reusability and Broader Impact (CAIDA and MIT Graph Challenge Graphs)
+## Reusability and Broader Impact (CAIDA Network Telescope and MIT Graph Challenge Graphs)
 
-In addition to the AutoTuneTD-SBP codebase, we provide recommended parameter configurations for the top-down SBP graph clustering algorithm for publicly available CAIDA graphs and [MIT Graph Challenge datasets](https://graphchallenge.mit.edu/data-sets/), as identified by AutoTuneTD-SBP. Researchers can use these configurations to run top-down SBP on these graphs without first running AutoTuneTD-SBP.
+In addition to the AutoTuneTD-SBP codebase, we provide recommended parameter configurations for the top-down SBP graph clustering algorithm for publicly available graphs from the [CAIDA network telescope](https://catalog.caida.org/dataset/2024_ieee_anonymized_nsg_challenge) and [MIT Graph Challenge datasets](https://graphchallenge.mit.edu/data-sets/), as identified by AutoTuneTD-SBP. Researchers can use these configurations to run top-down SBP on these graphs without first running AutoTuneTD-SBP.
 
 For each of the graphs, we provide three sets of recommended parameter configurations (obtained via AutoTuneTD-SBP experiments): for the case of `alpha = 0` that prioritizes computational performance, for `alpha = 0.5` that balances clustering accuracy and computational performance, and for `alpha = 1` that prioritizes clustering accuracy. More details on alpha can be found in the manuscript.
 
@@ -14,14 +14,14 @@ Each non-reference parameter configuration (Configurations 2-27) differs from th
 
 The complete definitions of all 27 parameter configurations considered in this work are available in [params.conf](TopDown-SBP/configs/params.conf).
 
-The table below shows one CAIDA graph and one MIT Graph Challenge graph with the parameter configuration recommended by AutoTuneTD-SBP for each `alpha` value:
+The table below shows one CAIDA network telescope graph and one MIT Graph Challenge graph with the parameter configuration recommended by AutoTuneTD-SBP for each `alpha` value:
 
 | Example Graph | Recommended Configuration<br>(for `alpha = 0`) | Recommended Configuration<br>(for `alpha = 0.5`) | Recommended Configuration<br>(for`alpha = 1`) |
 | --- | --- | --- | --- |
-| CAIDA<br>`20220114-`<br>`000000` | **Configuration 24**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=0.1, NODELTA=0, NONPARAMETRIC=0, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> | **Configuration 22**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=1.0, NODELTA=0, NONPARAMETRIC=1, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> | **Configuration 21**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=0.9, NODELTA=0, NONPARAMETRIC=1, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> |
+| CAIDA network telescope<br>`20220114-`<br>`000000` | **Configuration 24**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=0.1, NODELTA=0, NONPARAMETRIC=0, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> | **Configuration 22**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=1.0, NODELTA=0, NONPARAMETRIC=1, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> | **Configuration 21**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=0.9, NODELTA=0, NONPARAMETRIC=1, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> |
 | MIT Graph Challenge<br>`static_lowOverlap_`<br>`highBlockSizeVar_`<br>`20000000_nodes` | **Configuration 12**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=single-snowball, MH_PERCENT=0.1, NODELTA=0, NONPARAMETRIC=1, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> | **Configuration 9**<br> <sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=degree-weighted, SPLIT=connectivity-snowball, MH_PERCENT=0.1, NODELTA=0, NONPARAMETRIC=1, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> | **Configuration 1**<br><sub><code>BATCHES=2, CACHE_SIZE=20000, DEGREEPRODUCTSORT=1, SPLITINIT=random, SPLIT=connectivity-snowball, MH_PERCENT=0.1, NODELTA=0, NONPARAMETRIC=1, GREEDY=0, APPROXIMATE=0, MIX=0</code></sub> |
 
-Additional result files and provenance notes are available for [CAIDA](Results/CAIDA/README.md) and the [MIT Graph Challenge](Results/MGC/README.md).
+Additional result files and provenance notes are available for [CAIDA](https://github.com/vtsynergy/AutoTuneTD-SBP/blob/main/Results/CAIDA/README.md) and the [MIT Graph Challenge](https://github.com/vtsynergy/AutoTuneTD-SBP/blob/main/Results/MGC/README.md). **[Under Construction]**
 
 ## Requirements
 
