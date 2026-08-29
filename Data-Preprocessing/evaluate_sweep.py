@@ -48,6 +48,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--graph", type=Path, required=True, help="Graph TSV path.")
     parser.add_argument("--results", type=Path, required=True, help="Sweep output root.")
     parser.add_argument("--output", type=Path, required=True, help="Measurement CSV.")
+    # Update this default or pass --configurations when Top-down SBP is cloned
+    # elsewhere. The file must contain the 27 paper configurations.
     parser.add_argument(
         "--configurations",
         type=Path,

@@ -265,6 +265,8 @@ if __name__ == "__main__":
     parser.add_argument("--base_result_dir", type=str, required=True, help="Base directory for results")
     parser.add_argument("--output_dir", type=str, required=True, help="Directory to save CSV outputs")
     parser.add_argument("--dataset", type=str, required=True, help="Name of the dataset")
+    # Pass the path to the 27-configuration params.conf from the user's local
+    # Top-down SBP checkout. This repository does not include that checkout.
     parser.add_argument("--params_conf", type=str, required=False, help="Path to params.conf")
     parser.add_argument("--graphs", nargs='*', default=[], help="Optional graph names to process")
     parser.add_argument("--graph_param_limits", nargs='*', default=[], help="Optional GRAPH:MAX_PARAM entries; process Param1..MAX_PARAM for each graph")

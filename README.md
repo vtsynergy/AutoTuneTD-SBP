@@ -53,9 +53,11 @@ For CUDA 13, replace the CUDA 12 RAPIDS packages in `requirements.txt` with thei
 
 The original Top-down SBP code is available at [vtsynergy/SBP](https://github.com/vtsynergy/SBP).
 
+`TopDown-SBP-Weighted/` contains our modification of the latest Top-down SBP code to support positive integer edge weights. This is important for multigraph-derived datasets such as the CAIDA network telescope, where the same source--destination pair can occur multiple times. The edge weight preserves that multiplicity, and weighted Top-down SBP represents it as parallel unit edges during clustering.
+
 ```bash
-cmake -S TopDown-SBP -B TopDown-SBP/build -DCMAKE_BUILD_TYPE=Release
-cmake --build TopDown-SBP/build --target TopDownSBP -j
+cmake -S TopDown-SBP-Weighted -B TopDown-SBP-Weighted/build -DCMAKE_BUILD_TYPE=Release
+cmake --build TopDown-SBP-Weighted/build --target TopDownSBP -j
 ```
 
 ## Run

@@ -584,6 +584,8 @@ if __name__ == "__main__":
     parser.add_argument("--result_dir", type=str,
                         default=os.path.join(os.path.dirname(__file__), "Results", "SBP"),
                         help="Directory containing the SBP result.json files.")
+    # Update this default or pass --param_file when Top-down SBP is cloned to a
+    # different location. The file must contain the 27 paper configurations.
     parser.add_argument("--param_file", type=str,
                         default=os.path.join(os.path.dirname(__file__), "..", "TopDown-SBP", "configs", "params.conf"),
                         help="SBP parameter sweep file used for this run.")
